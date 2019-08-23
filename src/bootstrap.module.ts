@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TodoModule } from './todo/todo.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
     imports: [
@@ -12,6 +13,7 @@ import { TodoModule } from './todo/todo.module';
             synchronize: true,
             logging: true,
         }),
+        AuthModule,
     ],
 })
 export class BootstrapModule {}
